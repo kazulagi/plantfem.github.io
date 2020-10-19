@@ -10,6 +10,24 @@ Followings are major classes.
 
 (1) plantFEM uses [iso_fortran_env](https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html) for basic data types. 
 
+```fortran
+
+program main
+    use iso_fortran_env
+    implicit none
+
+    ! defining 64-bit Real value 
+    real(real64) :: re = 1.0d0
+
+    ! defining 32-bit Integer value 
+    real(int32) :: int = 1
+
+    print *, re, int
+
+end program main
+
+```fortran
+
 (2) [TimeClass](https://github.com/kazulagi/plantfem/tree/master/src/TimeClass/TimeClass.f90) is a class for time measurement, which can be used to measure cpu time by creating an instance of type time_.
 
 (3) [MathClass](https://github.com/kazulagi/plantfem/tree/master/src/MathClass/MathClass.f90) is a library for mathematical operations such as matrix calculation and tensor operations. Although "Class" is in the name, but this is just a toolbox of useful functions.
