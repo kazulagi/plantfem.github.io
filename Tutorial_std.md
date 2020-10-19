@@ -1,16 +1,16 @@
 [plantFEM](https://kazulagi.github.io/plantfem.github.io/index.md) >> [std](https://github.com/kazulagi/plantfem/tree/master/src/std/std.f90)
 
-### plantFEM std library
+## plantFEM std library
 
 Welcome to a tutorial for plantFEM std library.
 
 The std library contains following classes and modules ([std](https://github.com/kazulagi/plantfem/tree/master/src/std/std.f90)).
 
-#### modules
+### modules
 
 Followings are major classes.
 
-(1) plantFEM uses [iso_fortran_env](https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html) for basic data types. 
+#### (1) plantFEM uses [iso_fortran_env](https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html) for basic data types. 
 
 For instance, 64-bit Real value and 32-bit Integer value are defined as shown below.
 
