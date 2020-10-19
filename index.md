@@ -9,8 +9,9 @@ plantFEM consists of 4 components, each of which contains some libraries for num
 
 #### std
 
-    A standard library of Fortran prepared for plantFEM. This module extends fortran for easier use.
-    Learn how to use it >> [std](Tutorial_std.md)
+A standard library of Fortran prepared for plantFEM. This module extends fortran for easier use.
+
+Try it on from HERE >> [std](Tutorial_std.md)
 
 #### fem
 
