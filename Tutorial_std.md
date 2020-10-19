@@ -147,30 +147,38 @@ Ex.
 ```fortran
 
 program main
-    use std
+    use plantFEM
     implicit none
 
-    type(Time_) :: time
 
-    ! stop-watch starts!
-    call time%start()
+    real(real64) :: re64=100.0d0
+    real(real64) :: vec(100)=1.0d0
+    real(real64) :: vec3(3)=1.0d0
+    real(real64) :: tensor(3,3)=0.0d0
+
+    print *, "100 radian = ", degrees(re64),"degrees"
+    print *, "100 degrees= ", radian(re64),"radian"
+
+    print *, "real64 => string: ", str(re64)
+
+    print *, "norm of vec(100) : ", norm(vec)
+
+    tensor(:,:) = tensor_product(vec3,vec3)
+
+    print *, tensor(1,:)
+    print *, tensor(2,:)
+    print *, tensor(3,:)
+
+    tensor(:,:)=0.0d0
+
+    tensor(1,1)=1.0d0
+    tensor(2,2)=1.0d0
+    tensor(3,3)=1.0d0
+
+    print *, "det(tensor) : ", det_mat(tensor,size(tensor,1) )
+
+    print *, "...etc."
     
-    print *, "Hello!"
-    
-    ! measuring cpu-time.
-    call time%show()
-
-    ! reset stop-watch
-    call time%reset()
-
-    print *, "How are you today?"
-    
-    ! measuring cpu-time.
-    call time%show()
-
-    ! sleep for 20 sec.
-    call time%sleep(20)
-
 end program main
 
 ```
@@ -190,10 +198,15 @@ The result of the script is,
 
 ```shellscript
 
- Hello!
-   2.3000000000000017E-005
- How are you today?
-   2.4729999999999999E-003
+ 100 radian =    5729.5779514719952      degrees
+ 100 degrees=    1.7453292519444445      radian
+ real64 => string: 100.00000000        
+ norm of vec(100) :    10.000000000000000     
+   1.0000000000000000        1.0000000000000000        1.0000000000000000     
+   1.0000000000000000        1.0000000000000000        1.0000000000000000     
+   1.0000000000000000        1.0000000000000000        1.0000000000000000     
+ det(tensor) :    1.0000000000000000     
+ ...etc.
 
 ```
 
