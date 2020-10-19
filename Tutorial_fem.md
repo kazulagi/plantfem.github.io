@@ -12,19 +12,6 @@ The fem library contains following classes and modules ([fem](https://github.com
 Followings are major classes.
 
 
-    use MeshClass
-    use MaterialPropClass
-    use ControlParaeterClass
-    !use ContactClass
-    use BoundaryConditionClass
-    use StrainClass
-    use StressClass
-    use ConstitutiveModelClass
-    use FEMDomainClass
-    use FEMIfaceClass
-    use PostProcessingClass
-    use PreProcessingClass
-
 ### (1) [MeshClass](https://github.com/kazulagi/plantfem/tree/master/src/MeshClass/MeshClass.f90) is a class for mesh objects, the instance of which can have all information for a plain mesh object.
 
 ### (2) [MaterialPropClass](https://github.com/kazulagi/plantfem/tree/master/src/MaterialPropClass/MaterialPropClass.f90) is a class for material properties, the instance of which can have all material information for single plain mesh object.
