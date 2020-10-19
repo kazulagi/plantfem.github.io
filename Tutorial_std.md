@@ -13,7 +13,7 @@ Followings are major classes.
 For instance, 64-bit Real value and 32-bit Integer value are defined as shown below.
 
 
-```fortran:server.f90
+```fortran
 
 program main
     use iso_fortran_env
