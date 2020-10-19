@@ -10,23 +10,61 @@ Followings are major classes.
 
 (1) plantFEM uses [iso_fortran_env](https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html) for basic data types. 
 
-```fortran
+For instance, 64-bit Real value and 32-bit Integer value are defined as shown below.
 
+```fortran
 program main
     use iso_fortran_env
     implicit none
 
+
+    ! defining 128-bit Real value 
+    real(real128) :: re128 = 1.0d0
+
     ! defining 64-bit Real value 
-    real(real64) :: re = 1.0d0
+    real(real64) :: re64 = 1.0d0
+
+    ! defining 32-bit Real value 
+    real(real32) :: re32 = 1.0d0
+
+
+    ! defining 64-bit Integer value 
+    integer(int64) :: in64 = 1234567890
 
     ! defining 32-bit Integer value 
-    real(int32) :: int = 1
+    integer(int32) :: in32 = 1234567890
 
-    print *, re, int
+    ! defining 16-bit Integer value 
+    integer(int16) :: in16 = 12345
+
+    ! defining 8-bit Integer value 
+    integer(int8) :: in8 = 123
+
+    print *, re128
+    print *, re64
+    print *, re32
+    print *, in64
+    print *, in32
+    print *, in16
+    print *, in8
 
 end program main
 
 ```fortran
+
+The result of the script is,
+
+```shell
+
+   1.00000000000000000000000000000000000      
+   1.0000000000000000     
+   1.00000000    
+           1234567890
+  1234567890
+  12345
+  123
+
+```shell
 
 (2) [TimeClass](https://github.com/kazulagi/plantfem/tree/master/src/TimeClass/TimeClass.f90) is a class for time measurement, which can be used to measure cpu time by creating an instance of type time_.
 
