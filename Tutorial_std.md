@@ -57,7 +57,7 @@ end program main
 
 The result of the script is,
 
-```shell
+```shellscript
 
    1.00000000000000000000000000000000000      
    1.0000000000000000     
@@ -67,7 +67,7 @@ The result of the script is,
   12345
   123
 
-```shell
+```
 
 (2) [TimeClass](https://github.com/kazulagi/plantfem/tree/master/src/TimeClass/TimeClass.f90) is a class for time measurement, which can be used to measure cpu time by creating an instance of type time_.
 
