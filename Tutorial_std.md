@@ -81,6 +81,66 @@ The result of the script is,
 
 ### (2) [TimeClass](https://github.com/kazulagi/plantfem/tree/master/src/TimeClass/TimeClass.f90) is a class for time measurement, which can be used to measure cpu time by creating an instance of type time_.
 
+Ex. [Example1](https://github.com/kazulagi/plantfem/tree/master/Tutorial/playon_std/ex0000_time.f90)
+
+
+```fortran
+
+program main
+    use std
+    implicit none
+
+    type(Time_) :: time
+
+    ! stop-watch starts!
+    call time%start()
+    
+    print *, "Hello!"
+    
+    ! measuring cpu-time.
+    call time%show()
+
+    ! reset stop-watch
+    call time%reset()
+
+    print *, "How are you today?"
+    
+    ! measuring cpu-time.
+    call time%show()
+
+    ! sleep for 20 sec.
+    call time%sleep(20)
+
+end program main
+
+```
+
+
+
+If the script is named as "server.f90" and located in the root repository of the plantfem, the script is executable by this command.
+
+```shellscript
+
+./plantfem run
+
+```
+
+
+The result of the script is,
+
+```shellscript
+
+ Hello!
+   2.3000000000000017E-005
+ How are you today?
+   2.4729999999999999E-003
+
+```
+
+
+### (3) [MathClass](https://github.com/kazulagi/plantfem/tree/master/src/MathClass/MathClass.f90) is a library for mathematical operations such as matrix calculation and tensor operations. Although "Class" is in the name, but this is just a toolbox of useful functions.
+
+
 Ex.
 
 
@@ -138,7 +198,6 @@ The result of the script is,
 ```
 
 
-(3) [MathClass](https://github.com/kazulagi/plantfem/tree/master/src/MathClass/MathClass.f90) is a library for mathematical operations such as matrix calculation and tensor operations. Although "Class" is in the name, but this is just a toolbox of useful functions.
 
 (4) [HTTPClass](https://github.com/kazulagi/plantfem/tree/master/src/HTTPClass/HTTPClass.f90) is a remnant from when I was trying to set up an http server at plantFEM. It is waiting for your commit.
 
