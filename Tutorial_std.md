@@ -54,6 +54,14 @@ end program main
 
 ```
 
+If the script is named as "server.f90" and located in the root repository of the plantfem, the script is executable by this command.
+
+```shellscript
+
+./plantfem run
+
+```
+
 
 The result of the script is,
 
