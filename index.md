@@ -2,13 +2,54 @@
 
 You can download the [plantFEM](https://github.com/kazulagi/plantfem.git) to perform physical simulation for plants.
 
+# Get started!
+
+Let's download plantFEM into your system:
+
+```shellscript
+
+git clone https://github.com/kazulagi/plantfem.git &&
+cd plantfem &&
+python3 setup.py
+
+```
+
+Then, let's install plantFEM.
+
+
+```shellscript 
+
+./plantfem install
+
+```
+
+
+When you install plantFEM, you'll also get build and execution tools for Fortran since plantFEM is based on the modern Fortran. The plantFEM does lots of things:
+
+
+- create your new project with ``./plantfem new``
+- build & run your project with ``./plantfem run``
+- update your plantFEM ``./plantfem update``
+- check mannual with  ``./plantfem man``
+- set hostfile for MPI with  ``./plantfem hostfile``
+- change cpu-core for MPI with  ``./plantfem cpu-core``
+
+
+You can write a script on ``server.f90`` in your root directory of plantFEM. If you want to use other modules written in Fortran, please set them into ``addon/`` directory. All Fortran files in the directory is compiled with the plantFEM library before they are linked to your ``server.f90`` script.
+
+
+Further, you can easily use MPI by following steps.
+
+- set your hostfile at ``etc/hostfile``
+- write number of cpu-cores in ``etc/cpucore`` or run ``./plantfem cpu-core`` before running your script.
+
 ## Examples
 
-plantFEM consists of 4 components, each of which contains some libraries for numerical simulations.
+plantFEM consists of 4 components, each of which contains some libraries for numerical simulations. All examples runs when it is copied and pasted into ``server.f90`` and executed by ``./plantfem run`` command.
 
 ### std
 
-A standard library of Fortran prepared for plantFEM. This module extends fortran for easier use.
+A standard library of Fortran prepared for plantFEM. This module extends fortran for easier use. 
 
 Try it on from HERE >> [std](Tutorial_std.md)
 
