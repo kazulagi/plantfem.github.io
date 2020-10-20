@@ -8,10 +8,16 @@ Let's download plantFEM into your system:
 
 ```shellscript
 
-git clone https://github.com/kazulagi/plantfem.git &&
-cd plantfem &&
-python3 setup.py
+git clone https://github.com/kazulagi/plantfem.git && cd plantfem && python3 setup.py
 
+```
+
+or you can run on Google Colab
+
+```
+!git clone https://github.com/kazulagi/plantfem.git 
+%cd ./plantfem
+!python3 setup.py
 ```
 
 Then, let's install plantFEM.
@@ -22,6 +28,15 @@ Then, let's install plantFEM.
 ./plantfem install
 
 ```
+
+In case of Google Colab, please add ``!`` before a command. For instance, a command ``./plantfem install`` is
+
+```shellscript 
+
+!./plantfem install
+
+```
+
 
 
 When you install plantFEM, you'll also get build and execution tools for Fortran since plantFEM is based on the modern Fortran. The plantFEM does lots of things:
