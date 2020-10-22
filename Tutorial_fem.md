@@ -14,6 +14,52 @@ Followings are major classes.
 
 ### (1) [MeshClass](https://github.com/kazulagi/plantfem/tree/master/src/MeshClass/MeshClass.f90) is a class for mesh objects, the instance of which can have all information for a plain mesh object.
 
+Ex. mesh creation, export, and get informations
+
+```fortran
+
+program main
+    use fem
+    implicit none
+
+    type(Mesh_) :: cube, sphere, cylinder
+    real(real64),allocatable :: coordinate(:)
+
+    ! create new plain mesh
+    call cube%create(meshtype="Cube",x_num=10,y_num=10,division=10,x_len=1.0d0,y_len=1.0d0,thickness=1.0d0)
+    call sphere%create(meshtype="Sphere",x_num=10,y_num=10,division=10,x_len=1.0d0,y_len=1.0d0,thickness=1.0d0)
+    call cylinder%create(meshtype="Cylinder",x_num=10,y_num=10,division=10,x_len=1.0d0,y_len=1.0d0,thickness=1.0d0)
+
+    ! export as json files
+    call cube%json(name="cube.json",endl=.true.)
+    call sphere%json(name="sphere.json",endl=.true.)
+    call cylinder%json(name="cylinder.json",endl=.true.)
+
+
+    ! get number of nodes
+    print *, "Number of nodes (cube) : ", cube%numNodes()
+    ! get number of elements
+    print *, "Number of elements (cube) : ", cube%numElements()
+
+    ! remove elements and nodes in a range
+    call cube%remove(x_min=0.20d0,x_max=2.0d0)
+    ! get number of nodes
+    print *, "Number of nodes (cube) : ", cube%numNodes()
+    ! get number of elements
+    print *, "Number of elements (cube) : ", cube%numElements()
+
+    ! get coordinate
+    ! (x, y, z) of node, the ID of which is 10
+    coordinate = cube%getCoordinate(NodeID=11)
+    print *, "x, y, z :",coordinate(:)
+
+    ! x-coordinate (x1, x2, x3, ... xn) of all nodes
+    coordinate = cube%getCoordinate(onlyY=.true.)
+    print *, "(x1, x2, x3, ... xn) :",coordinate(:)
+
+end program main
+
+```
 
 
 ### (2) [MaterialPropClass](https://github.com/kazulagi/plantfem/tree/master/src/MaterialPropClass/MaterialPropClass.f90) is a class for material properties, the instance of which can have all material information for single plain mesh object.
@@ -23,6 +69,67 @@ Followings are major classes.
 ### (4) [ControlParaeterClass](https://github.com/kazulagi/plantfem/tree/master/src/MeshClass/MeshClass.f90) is a class for control parameters for FEM analysis, the instance of which contains tolerance and dt.
 
 ### (5) [FEMDomainClass](https://github.com/kazulagi/plantfem/tree/master/src/FEMDomainClass/FEMDomainClass.f90) is a class for domain objects for FEM analysis, the instance of which can have all information for a strong-coupling FEM analysis.
+
+Ex. Mesh creation and save
+
+```fortran
+
+program main
+    use fem
+    implicit none
+
+    type(FEMDomain_) :: obj1
+    type(FEMDomain_) :: obj2
+    type(FEMDomain_) :: obj3
+    type(FEMDomain_) :: obj4
+    type(FEMDomain_) :: obj5
+
+    ! create FEM domain entities
+
+    ! -----> 1D
+    call obj1%create(meshtype="Bar1D",x_num=10,x_len=10.0d0)
+
+    ! -----> 2D
+    call obj2%create(meshtype="rectangular2D",x_num=12,y_num=12,x_len=5.0d0,y_len=50.0d0)
+    call obj2%gmsh(Name="obj2")
+    
+    ! -----> 3D
+    call obj3%create(meshtype="Cube",x_num=10,y_num=12,z_num=10,x_len=5.0d0,y_len=50.0d0,z_len=10.0d0)
+    
+    ! export .pos for Gmsh
+    call obj3%gmsh(Name="obj3")
+    
+    call obj4%create(meshtype="Sphere",x_num=10,y_num=10,z_num=10,x_len=5.0d0,y_len=50.0d0,z_len=10.0d0)
+    call obj4%resize(x=1.0d0,y=1.0d0,z=1.0d0)    
+    ! export .pos for Gmsh
+    call obj4%gmsh(Name="obj4")
+    
+    ! move 1.0 to x direction
+    call obj4%move(x=1.0d0)
+    
+    ! rotate 30.0 degrees around x-axis
+    call obj4%rotate(y=radian(30.0d0) )
+
+    ! copy obj4 to obj5
+    call obj5%copy(obj4)
+    call obj5%resize(x=10.0d0,y=10.0d0,z=10.0d0)
+    call obj5%gmsh(Name="obj5")
+
+    ! remove obj5
+    call obj5%remove()
+
+    ! Create cylinder mesh
+    call obj5%create(meshtype="Cylinder",x_num=10,y_num=10,z_num=10,x_len=5.0d0,y_len=50.0d0,z_len=10.0d0)
+    call obj5%resize(x=10.0d0,y=10.0d0,z=10.0d0)
+    call obj5%gmsh(Name="obj5_1")
+
+    ! export as JSON file
+    call obj5%json("obj5.json",endl=.true.)
+
+end program main
+
+```
+
 
 ### (6) [PreProcessingClass](https://github.com/kazulagi/plantfem/tree/master/src/PreProcessingClass/PreProcessingClass.f90) is a class for pre-processing in terms of FEM. This class is regacy, hence, under refactoring and being integrated into FEMDomainClass.
 
@@ -53,6 +160,7 @@ The result of the script is,
 
 ```
 
+-->
 These are minor classes.
 
 [StrainClass](https://github.com/kazulagi/plantfem/tree/master/src/StrainClass/StrainClass.f90)
@@ -60,5 +168,3 @@ These are minor classes.
 [ConstitutiveModelClass](https://github.com/kazulagi/plantfem/tree/master/src/ConstitutiveModelClass/ConstitutiveModelClass.f90)
 [FEMIfaceClass](https://github.com/kazulagi/plantfem/tree/master/src/FEMIfaceClass/FEMIfaceClass.f90)
 [PostProcessingClass](https://github.com/kazulagi/plantfem/tree/master/src/PostProcessingClass/PostProcessingClass.f90)
-
--->
