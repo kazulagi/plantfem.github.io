@@ -62,6 +62,72 @@ end program main
 ```
 
 
+The json file contains such data as
+
+
+```json
+
+{
+ "name": "cube.json",
+ "mesh":{
+"nodcoord" : [
+[-0.00000000,-0.00000000,-0.00000000],
+[0.10000000,-0.00000000,-0.00000000],
+[0.20000000,-0.00000000,-0.00000000],
+[0.30000000,-0.00000000,-0.00000000],
+...],
+"ElemNod" : [
+[1,2,13,12,122,123,134,133],
+[2,3,14,13,123,124,135,134],
+[3,4,15,14,124,125,136,135],
+[4,5,16,15,125,126,137,136],
+...],
+"ElemMat" : [1,1,1,...]
+ },
+ "return" : 0
+}
+
+```
+
+Hence, we can read and visualzie by using other languages such as python.
+
+```python
+
+import json
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+json_file = open('cube.json', 'r')
+json_object = json.load(json_file)
+
+# メッシュオブジェクト中の節点座標配列を取り出す
+
+nodcoord = np.array(json_object["nodcoord"])
+
+# 以下、matplotlibで描画
+#x軸とy軸にラベル付け
+fig = plt.figure()
+ax = Axes3D(fig)
+
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
+
+# 節点を描画
+
+x = nodcoord[:,0]
+y = nodcoord[:,1]
+z = nodcoord[:,2]
+ax.plot(x,y,z,marker="o",linestyle='None')
+
+# 図を表示
+
+plt.show()
+
+```
+
+
 ### (2) [MaterialPropClass](https://github.com/kazulagi/plantfem/tree/master/src/MaterialPropClass/MaterialPropClass.f90) is a class for material properties, the instance of which can have all material information for single plain mesh object.
 
 ### (3) [BoundaryConditionClass](https://github.com/kazulagi/plantfem/tree/master/src/BoundaryConditionClass/BoundaryConditionClass.f90) is a class for initial/boundary conditions properties, the instance of which can have all initial/boundary conditions information for single plain mesh object.

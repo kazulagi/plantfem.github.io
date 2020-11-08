@@ -4,7 +4,7 @@ You can download the [plantFEM](https://github.com/kazulagi/plantfem.git) to per
 
 # Get started!
 
-Let's download plantFEM into your system:
+## (1) Let's download plantFEM into your local system:
 
 ```shellscript
 
@@ -12,12 +12,20 @@ git clone https://github.com/kazulagi/plantfem.git && cd plantfem && python3 set
 
 ```
 
-or you can run on Google Colab
+## (2) or you can run on Google Colab
 
 ```
 !git clone https://github.com/kazulagi/plantfem.git 
 %cd ./plantfem
 !python3 setup.py
+```
+
+## (3) Also, docker is available
+
+
+```
+docker pull kazulagi/plantfem
+docker run --rm -it kazulagi/plantfem /bin/bash
 ```
 
 Then, let's install plantFEM.
