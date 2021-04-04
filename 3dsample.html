@@ -3,40 +3,54 @@
 <head>
   <meta charset="utf-8"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
   <script>
-    // ページの読み込みを待つ
+    
     window.addEventListener('load', init);
 
     function init() {
 
-      // サイズを指定
+      
+      // set window size
       const width = 960;
       const height = 540;
 
-      // レンダラーを作成
+      // create renderer
       const renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('#myCanvas')
       });
+
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(width, height);
 
-      // シーンを作成
+      // create a scene
       const scene = new THREE.Scene();
 
-      // カメラを作成
+      // create a camera
       const camera = new THREE.PerspectiveCamera(45, width / height);
       camera.position.set(0, 0, +1000);
 
-      // 箱を作成
+      // create a mesh
       const geometry = new THREE.BoxGeometry(400, 400, 400);
       const material = new THREE.MeshNormalMaterial();
       const box = new THREE.Mesh(geometry, material);
       scene.add(box);
 
+      // load json file
+      //const fs = require('fs');
+      //const jsonObject = JSON.parse(fs.readFileSync('./test.json', 'utf8'));
+
+      //var test = require( "./test.json" );
+      //var speed = test.speed;
+      //console.log(jsonObject.speed)
       tick();
 
       // 毎フレーム時に実行されるループイベントです
       function tick() {
+        //box.rotation.y += speed;
         box.rotation.y += 0.01;
         renderer.render(scene, camera); // レンダリング
 
@@ -49,4 +63,3 @@
   <canvas id="myCanvas"></canvas>
 </body>
 </html>
-ブ

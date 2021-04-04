@@ -2,6 +2,8 @@
 
 You can download the [plantFEM](https://github.com/kazulagi/plantfem.git) to perform physical simulation for plants.
 
+[Japanese](index_ja.md)
+
 # Get started!
 
 ## (1) Let's download plantFEM into your local system:
