@@ -1,7 +1,19 @@
 このページでは、plantFEMの使用例を紹介します。
 どちらでも好きなところから始められます。
 
+## [推奨] ツアー
 
+### plantFEMができること、plantFEMの使い方を短いツアーで体験しましょう。
+## [入り口はこちらから](https://colab.research.google.com/drive/1VPzKZlAsqZHO-Yzda2cCXM4Te3Ysh9h0?usp=sharing)
+
+
+　
+　
+　
+これらをお手元のデバイスで実行してみませんか？
+以下にその方法をご案内します。
+　
+　
 #### ダウンロード・インストール方法 (10分)
 
 plantFEMは、Ubuntu 16.04以降のバージョンでご利用いただけます。
