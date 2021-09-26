@@ -15,7 +15,7 @@ Followings are major classes.
 
 Sample code (Tutorial/obj/ex0003_diffusion3D.f90):
 
-```Fortran
+```fortran
 
 program main
     use sim
@@ -69,7 +69,7 @@ end program main
 
 Sample code (Tutorial/obj/ex0004_Deformation3D.f90):
 
-```Fortran
+```fortran
 program main
     use sim
     implicit none
@@ -134,7 +134,7 @@ end program main
 
 Sample code (Tutorial/sim/Contact3DLinearElastic.f90):
 
-```Fortran
+```fortran
 use ContactMechanicsClass
 implicit none
 
@@ -198,7 +198,7 @@ end
 
 Sample code (Tutorial/sim/SeismicAnalysis.f90):
 
-```Fortran
+```fortran
 use sim
 implicit none
 

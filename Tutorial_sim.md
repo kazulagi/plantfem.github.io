@@ -17,7 +17,7 @@ Followings are major classes.
 
 A simple sample code (Tutorial/obj/createSoybean.f90):
 
-```Fortran
+```fortran
 use SoybeanClass
 implicit none
 
@@ -35,7 +35,7 @@ end
 
 Other Sample code (Tutorial/obj/createAndRemoveSoybeanMPI.f90):
 
-```Fortran
+```fortran
 program main
     use SoybeanClass
     implicit none
@@ -67,7 +67,7 @@ end program main
 Sample code (Tutorial/obj/createMaize.f90):
 
 
-```Fortran
+```fortran
 use MaizeClass
 implicit none
 
@@ -86,7 +86,7 @@ end
 Sample code (Tutorial/obj/createGrape.f90):
 
 
-```Fortran
+```fortran
 use GrapeClass
 implicit none
 
