@@ -18,7 +18,7 @@ git clone https://github.com/kazulagi/plantfem.git && cd plantfem && python3 set
 
 ```
 !git clone https://github.com/kazulagi/plantfem.git 
-%cd ./plantfem
+%cd plantfem
 !python3 setup.py
 ```
 
@@ -35,15 +35,15 @@ Then, let's install plantFEM.
 
 ```shellscript 
 
-./plantfem install
+plantfem install
 
 ```
 
-In case of Google Colab, please add ``!`` before a command. For instance, a command ``./plantfem install`` is
+In case of Google Colab, please add ``!`` before a command. For instance, a command ``plantfem install`` is
 
 ```shellscript 
 
-!./plantfem install
+!plantfem install
 
 ```
 
@@ -52,12 +52,12 @@ In case of Google Colab, please add ``!`` before a command. For instance, a comm
 When you install plantFEM, you'll also get build and execution tools for Fortran since plantFEM is based on the modern Fortran. The plantFEM does lots of things:
 
 
-- create your new project with ``./plantfem new``
-- build & run your project with ``./plantfem run``
-- update your plantFEM ``./plantfem update``
-- check mannual with  ``./plantfem man``
-- set hostfile for MPI with  ``./plantfem hostfile``
-- change cpu-core for MPI with  ``./plantfem cpu-core``
+- create your new project with ``plantfem new``
+- build & run your project with ``plantfem run``
+- update your plantFEM ``plantfem update``
+- check mannual with  ``plantfem man``
+- set hostfile for MPI with  ``plantfem hostfile``
+- change cpu-core for MPI with  ``plantfem cpu-core``
 
 
 You can write a script on ``server.f90`` in your root directory of plantFEM. If you want to use other modules written in Fortran, please set them into ``addon/`` directory. All Fortran files in the directory is compiled with the plantFEM library before they are linked to your ``server.f90`` script.
@@ -66,7 +66,7 @@ You can write a script on ``server.f90`` in your root directory of plantFEM. If 
 Further, you can easily use MPI by following steps.
 
 - set your hostfile at ``etc/hostfile``
-- write number of cpu-cores in ``etc/cpucore`` or run ``./plantfem cpu-core`` before running your script.
+- write number of cpu-cores in ``etc/cpucore`` or run ``plantfem cpu-core`` before running your script.
 
 ## Examples
 
@@ -78,32 +78,32 @@ Further, you can easily use MPI by following steps.
 [3D objects](3dsample.html)
 
 ### Scripts and coding
-plantFEM consists of 4 components, each of which contains some libraries for numerical simulations. All examples runs when it is copied and pasted into ``server.f90`` and executed by ``./plantfem run`` command.
+plantFEM consists of 4 components, each of which contains some libraries for numerical simulations. All examples runs when it is copied and pasted into ``server.f90`` and executed by ``plantfem run`` command.
 
 ### std
 
 A standard library of Fortran prepared for plantFEM. This module extends fortran for easier use. 
 
-Try it on from HERE >> [std](Tutorial_std.md)
+Try it from HERE >> [std](Tutorial_std.md)
 
 ### fem
 
 A library for data-objects for FEM analysis.
 
-Try it on from HERE >> [fem](Tutorial_fem.md)
+Try it from HERE >> [fem](Tutorial_fem.md)
 
 ### sim
 
 
 A library for simulators for FEM analysis.
 
-Try it on from HERE >> [sim](Tutorial_sim.md)
+Try it from HERE >> [sim](Tutorial_sim.md)
 
 ### obj
 
 A library for realistic objects such as soybean, stem, leaf, soil, air, light ...etc.
 
-Try it on from HERE >> [obj](Tutorial_obj.md)
+Try it from HERE >> [obj](Tutorial_obj.md)
 
 
 
