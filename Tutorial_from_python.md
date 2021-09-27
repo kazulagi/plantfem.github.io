@@ -32,8 +32,8 @@ end
 | How to compile a script? | - | ```plantfem build [your_script_name.f90]```, then, an executable file ```server.out``` is created. |
 | Need definition before using it? | No | Yes|
 | How to call external modules/libraries | ```import [library_name]``` | ```use [library_name]``` |
-| How to define a function which has return values. | ```def func(arg): <br>  retrun ret``` | ```function func(arg) result(ret) <br> end function func``` |
-| How to define a function which does NOT have return values. | ```def sub(arg1, arg2, ...): <br> return ret``` | ```subroutine sub(arg1, arg2,...)  <br> end subroutine sub``` |
+| How to define a function which has return values. | ```def func(arg): ```<br>``` ```<br>```  retrun ret``` | ```function func(arg) result(ret) ```<br>``` ```<br>``` end function func``` |
+| How to define a function which does NOT have return values. | ```def sub(arg1, arg2, ...): ```<br>``` ```<br>``` return ret``` | ```subroutine sub(arg1, arg2,...)  ```<br>``` ```<br>``` end subroutine sub``` |
 | Does indentation have any meaning? | Yes | No |
 | Are there any statements that must be written in a program? | No | Yes, it is ```implicit none```  |
 | How to call a function with return values? | ```ret = func(arg)``` | ```ret = func(arg)``` |
@@ -52,12 +52,12 @@ end
 
 | How to write this (Basic operations) | ... in plantFEM?         | ...and what to declare before calling it?|
 | :---- | :---- | :---- |
-| ```for i in range(10): <br> ``` | ```do i=1, 10 <br> enddo ``` |  ```integer(int32) :: i``` |
-| ```if a == b: <br> ``` | ```if(a==b)then <br> end if ``` | - |
-| ```if a != b: <br> ``` | ```if(a/=b)then <br> end if ``` | - |
-| ```if a > b: <br> ``` | ```if(a > b)then <br> end if ``` | - |
-| ```if a < b: <br> ``` | ```if(a < b)then <br> end if ``` | - |
-| ```if a < b and a > c: <br> ``` | ```if(a < b .and. a > c)then <br> end if ``` | - |
+| ```for i in range(10): ```<br>``` ```<br>``` ``` | ```do i=1, 10 ```<br>``` ```<br>``` enddo ``` |  ```integer(int32) :: i``` |
+| ```if a == b: ```<br>``` ```<br>``` ``` | ```if(a==b)then ```<br>``` ```<br>``` end if ``` | - |
+| ```if a != b: ```<br>``` ```<br>``` ``` | ```if(a/=b)then ```<br>``` ```<br>``` end if ``` | - |
+| ```if a > b: ```<br>``` ```<br>``` ``` | ```if(a > b)then ```<br>``` ```<br>``` end if ``` | - |
+| ```if a < b: ```<br>``` ```<br>``` ``` | ```if(a < b)then ```<br>``` ```<br>``` end if ``` | - |
+| ```if a < b and a > c: ```<br>``` ```<br>``` ``` | ```if(a < b .and. a > c)then ```<br>``` ```<br>``` end if ``` | - |
 | ```print(a) ``` |```call print(a)  ``` |- |
 | ```print("hello "+"world!") ``` |```call print("hello "//"world!")  ``` |- |
 
@@ -87,4 +87,4 @@ end
 | ```a = a.T #transpose ``` |```a = transpose(a) ``` |- |
 | ```a = reshape(a,2,2) #reshape ``` |```a = reshape(a,2,2) ``` |- |
 
-
+Other features are presented in [Documentation](../Tutorial_std.md)
