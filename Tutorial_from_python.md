@@ -87,4 +87,10 @@ end
 | ```a = a.T ```<br> ```#transpose ``` |```a = transpose(a) ``` |- |
 | ```a = reshape(a,2,2) ```<br> ```#reshape ``` |```a = reshape(a,2,2) ``` |- |
 
+| What's this? | Explanation |
+|:------------ |:------------ |
+|allocatable | [English](https://www.ibm.com/docs/en/xl-fortran-aix/16.1.0?topic=attributes-allocatable-fortran-2003) <br> [Japanese](https://www.nag-j.co.jp/nagfor/np52_manual/np52_manual_10_3.html) <br>```allocatable``` is one of the strongest feature of the Fortran. We can create any dynamic arrays of any types, including real, integer, character, and derived data types. |
+|intent | [English](https://pages.mtu.edu/~shene/COURSES/cs201/NOTES/chap07/intent.html) <br> [Japanese](https://www.nag-j.co.jp/fortran/FI_11.html) |
+
 Other features are presented in [Documentation](../Tutorial_std.md)
+
