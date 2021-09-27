@@ -32,8 +32,8 @@ end
 | How to compile a script? | - | ```plantfem build [your_script_name.f90]```, then, an executable file ```server.out``` is created. |
 | Need definition before using it? | No | Yes|
 | How to call external modules/libraries | ```import [library_name]``` | ```use [library_name]``` |
-| How to define a function which has return values. | ```def func(arg): ~  retrun ret``` | ```function func(arg) result(ret) ~ end function func``` |
-| How to define a function which does NOT have return values. | ```def sub(arg1, arg2, ...): ~ return ret``` | ```subroutine sub(arg1, arg2,...)  ~ end subroutine sub``` |
+| How to define a function which has return values. | ```def func(arg): <br>  retrun ret``` | ```function func(arg) result(ret) <br> end function func``` |
+| How to define a function which does NOT have return values. | ```def sub(arg1, arg2, ...): <br> return ret``` | ```subroutine sub(arg1, arg2,...)  <br> end subroutine sub``` |
 | Does indentation have any meaning? | Yes | No |
 | Are there any statements that must be written in a program? | No | Yes, it is ```implicit none```  |
 | How to call a function with return values? | ```ret = func(arg)``` | ```ret = func(arg)``` |
@@ -51,13 +51,13 @@ end
 | ```string``` |```character``` |
 
 | How to write this (Basic operations) | ... in plantFEM?         | ...and what to declare before calling it?|
-| ---- | ---- | ---- |
-| ```for i in range(10): ~ ``` | ```do i=1, 10 ~ enddo ``` |  ```integer(int32) :: i``` |
-| ```if a == b: ~ ``` | ```if(a==b)then ~ end if ``` | - |
-| ```if a != b: ~ ``` | ```if(a/=b)then ~ end if ``` | - |
-| ```if a > b: ~ ``` | ```if(a > b)then ~ end if ``` | - |
-| ```if a < b: ~ ``` | ```if(a < b)then ~ end if ``` | - |
-| ```if a < b and a > c: ~ ``` | ```if(a < b .and. a > c)then ~ end if ``` | - |
+| :---- | :---- | :---- |
+| ```for i in range(10): <br> ``` | ```do i=1, 10 <br> enddo ``` |  ```integer(int32) :: i``` |
+| ```if a == b: <br> ``` | ```if(a==b)then <br> end if ``` | - |
+| ```if a != b: <br> ``` | ```if(a/=b)then <br> end if ``` | - |
+| ```if a > b: <br> ``` | ```if(a > b)then <br> end if ``` | - |
+| ```if a < b: <br> ``` | ```if(a < b)then <br> end if ``` | - |
+| ```if a < b and a > c: <br> ``` | ```if(a < b .and. a > c)then <br> end if ``` | - |
 | ```print(a) ``` |```call print(a)  ``` |- |
 | ```print("hello "+"world!") ``` |```call print("hello "//"world!")  ``` |- |
 
