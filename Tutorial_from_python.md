@@ -52,12 +52,12 @@ end
 
 | How to write this (Basic operations) | ... in plantFEM?         | ...and what to declare before calling it?|
 | :---- | :---- | :---- |
-| ```for i in range(10): ```<br>```　　 ``` | ```do i=1, 10 ```<br>``` enddo ``` |  ```integer(int32)::i``` |
-| ```if a == b: ```<br>```　　 ``` | ```if(a==b)then ```<br>``` end if ``` | - |
-| ```if a != b: ```<br>```　　 ``` | ```if(a/=b)then ```<br>``` end if ``` | - |
-| ```if a > b: ```<br>```　　 ``` | ```if(a > b)then ```<br>``` end if ``` | - |
-| ```if a < b: ```<br>```　　 ``` | ```if(a < b)then ```<br>``` end if ``` | - |
-| ```if a < b and a > c: ```<br>```　　 ``` | ```if(a < b .and. a > c)then ```<br>``` end if ``` | - |
+| ```for i in range(10): ```<br>```　　 ``` | ```do i=1, 10 ```<br><br>``` enddo ``` |  ```integer(int32)::i``` |
+| ```if a == b: ```<br>```　　 ``` | ```if(a==b)then ```<br><br>``` end if ``` | - |
+| ```if a != b: ```<br>```　　 ``` | ```if(a/=b)then ```<br><br>``` end if ``` | - |
+| ```if a > b: ```<br>```　　 ``` | ```if(a > b)then ```<br><br>``` end if ``` | - |
+| ```if a < b: ```<br>```　　 ``` | ```if(a < b)then ```<br><br>``` end if ``` | - |
+| ```if a < b and a > c: ```<br>```　　 ``` | ```if(a < b .and. a > c)then ```<br><br>``` end if ``` | - |
 | ```print(a) ``` |```call print(a)  ``` |- |
 | ```print("hello "+"world!") ``` |```call print("hello "//"world!")  ``` |- |
 
