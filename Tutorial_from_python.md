@@ -31,7 +31,7 @@ end
 | How to execute a script? | ```python3 [your_script_name.py]``` | ```plantfem [your_script_name.f90]``` |
 | How to compile a script? | - | ```plantfem build [your_script_name.f90]```, then, an executable file ```server.out``` is created. |
 | Need definition before using it? | No | Yes|
-| How to call external modules/libraries | import [library_name] | use [library_name] |
+| How to call external modules/libraries | ```import [library_name]``` | ```use [library_name]``` |
 | How to define a function which has return values. | ```def func(arg): ~  retrun ret``` | ```function func(arg) result(ret) ~ end function func``` |
 | How to define a function which does NOT have return values. | ```def sub(arg1, arg2, ...): ~ return ret``` | ```subroutine sub(arg1, arg2,...)  ~ end subroutine sub``` |
 | Does indentation have any meaning? | Yes | No |
