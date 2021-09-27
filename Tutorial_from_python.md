@@ -1,4 +1,4 @@
-```<br> ```# Welcome from Python!
+# Welcome from Python!
 
 
 Here is a cheat sheet of plantFEM for python users.
@@ -32,22 +32,22 @@ end
 | How to compile a script? | - | ```plantfem build [script.f90]```,<br> then, an executable file<br> ```server.out``` is created. |
 | Need declarations before using it? | No | Yes|
 | How to call external modules/libraries | ```import [library_name]``` | ```use [library_name]``` |
-| How to define a function which <br> has return values. | ```def func(arg): ```<br><tab>```　　retrun ret``` | ```function func(arg) result(ret) ```<br>``` ```<br>``` end function func``` |
-| How to define a function which <br> does NOT have return values. | ```def sub(arg1, arg2, ...): ```<br>```　　return ret``` | ```subroutine sub(arg1, arg2,...)  ```<br>``` ```<br>``` end subroutine sub``` |
+| How to define a function which <br> has return values. | ```def func(arg): ```<br>```　　retrun ret``` | ```function func(arg) result(ret) ```<br>``` end function func``` |
+| How to define a function which <br> does NOT have return values. | ```def sub(arg1, arg2, ...): ```<br>```　　return ret``` | ```subroutine sub(arg1, arg2,...)  ```<br>``` end subroutine sub``` |
 | Does indentation have any meaning? | Yes | No |
 | Are there any statements that must <br> be written in a program? | No | Yes, it is ```implicit none```  |
 | How to call a function with return values? | ```ret = func(arg)``` | ```ret = func(arg)``` |
 | How to call a function WITHOUT return values? | ```func(arg)``` | ```call func(arg)``` |
 |Should the declarations be written<br>  together at the beginning?　| No | Yes|
 | How to call class-method <br> or menber variables | ```.``` | ```%```|
-| How to comment-out | ``````<br> ```#``` | ```!```|
+| How to comment-out |  ```#``` | ```!```|
 
 
 | Types in Python | Types in plantFEM |
 | ---- | ---- |
 | ```int``` |``` integer(int16)```,``` integer(int32)```,or ```integer(int64)```|
 | ```float``` |``` real(real32)```,``` real(real64)```,or ```real(real128)``` |
-| ```complex``` |``` complex```,``` double complex```,``` ...etc. |
+| ```complex``` |``` complex```,``` double complex```, ...etc. |
 | ```string``` |```character``` |
 
 | How to write this (Basic operations) | ... in plantFEM?         | ...and what to declare before calling it?|
