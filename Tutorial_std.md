@@ -7,14 +7,13 @@ Welcome to a tutorial for plantFEM std library.
 The std library contains following classes and modules ([std](https://github.com/kazulagi/plantfem/tree/master/src/std/std.f90)).
 
 
-# Are you from...
+# Are you from Python? [click here!](Tutorial_from_python.md)
 
-## Python? [click here!](Tutorial_from_python.md)
-
+<!-- 
 ## R? [click here!](Tutorial_from_r.md)
 
 ## MATLAB? [click here!](Tutorial_from_matlab.md)
-
+-->
 
 
 ## modules

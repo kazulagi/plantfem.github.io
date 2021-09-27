@@ -28,6 +28,8 @@ end
 
 | Question | Python | plantFEM (and/or Fortran 2003) |
 | ---- | ---- | ---- |
+| How to execute a script? | ```python3 [your_script_name.py]``` | ```plantfem [your_script_name.f90]``` |
+| How to compile a script? | - | ```plantfem build [your_script_name.f90]```, then, an executable file ```server.out``` is created. |
 | Need definition before using it? | No | Yes|
 | How to call external modules/libraries | import [library_name] | use [library_name] |
 | How to define a function which has return values. | ```def func(arg): ~  retrun ret``` | ```function func(arg) result(ret) ~ end function func``` |
@@ -56,7 +58,8 @@ end
 | ```if a > b: ~ ``` | ```if(a > b)then ~ end if ``` | - |
 | ```if a < b: ~ ``` | ```if(a < b)then ~ end if ``` | - |
 | ```if a < b and a > c: ~ ``` | ```if(a < b .and. a > c)then ~ end if ``` | - |
-
+| ```print(a) ``` |```call print(a)  ``` |- |
+| ```print("hello "+"world!") ``` |```call print("hello "//"world!")  ``` |- |
 
 
 | How to write this (File-IO) | ... in plantFEM?         | ...and what to declare before calling it?|
@@ -69,5 +72,19 @@ end
 | ```f.close("hello)"``` | ```call f%close()``` | - |
 
 
+| How to write this (Numpy) | ... in plantFEM?         | ...and what to declare before calling it?|
+| ---- | ---- | ---- |
+| ```a = np.zeros(5)``` | ```a = zeros(5)``` | ```real(real64),allocatable :: a(:)``` |
+| ```a = np.linspace(2.0, 3.0, num=5)``` | ```a = linspace([2.0d0,3.0d0],5 )``` | ```real(real64),allocatable :: a(:)``` |
+| ```a = np.arange(3,7)``` | ```a = arange(3,7)``` | ```real(real64),allocatable :: a(:)``` |
+| ```a = np.array([2.0, 3.0, 4.0]) ``` | ```a = [2.0d0, 3.0d0, 4.0d0] ``` | ```real(real64),allocatable :: a(:)``` |
+| ```a = np.array([2.0, 3.0],[4.0,5.0]) ``` | ```a(1,1:2) = [2.0d0, 3.0d0];a(2,1:2) = [3.0d0, 4.0d0]; ``` | ```real(real64),allocatable :: a(:,:); a = zeros(2,2)``` |
+| ```dp = np.dot(a,b) # a is vector, b is vector``` | ```dp = dot_product(a,b)``` | ``` ``` |
+| ```dp = np.dot(a,b) # a is matrix, b is vector or matrix``` | ```dp = matmul(a,b)``` | ```real(real64),allocatable :: dp(:) ! or dp(:,:)``` |
+| ```a1 = a[0] #index starts from 0 as default.``` | ```a1 = a(1) ! index starts from 1 as default.``` | - |
+| ```random_value = np.random.rand()``` |```random_value = random.random()``` |```type(Random_) :: random``` |
+| ```random_value = np.random.normal(loc=average, scale=standard_deviation)``` |```random_value = random.gauss(mu=average, sigma=standard_deviation)``` |```type(Random_) :: random``` |
+| ```a = a.T #transpose ``` |```a = transpose(a) ``` |- |
+| ```a = reshape(a,2,2) #reshape ``` |```a = reshape(a,2,2) ``` |- |
 
 
