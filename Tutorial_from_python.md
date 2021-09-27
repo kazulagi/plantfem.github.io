@@ -32,8 +32,8 @@ end
 | How to compile a script? | - | ```plantfem build [script.f90]```,<br> then, an executable file<br> ```server.out``` is created. |
 | Need declarations before using it? | No | Yes|
 | How to call external modules/libraries | ```import [library_name]``` | ```use [library_name]``` |
-| How to define a function which <br> has return values. | ```def func(arg): ```<br>``` ```<br>```  retrun ret``` | ```function func(arg) result(ret) ```<br>``` ```<br>``` end function func``` |
-| How to define a function which <br> does NOT have return values. | ```def sub(arg1, arg2, ...): ```<br>``` ```<br>``` return ret``` | ```subroutine sub(arg1, arg2,...)  ```<br>``` ```<br>``` end subroutine sub``` |
+| How to define a function which <br> has return values. | ```def func(arg): ```<br><tab>```　　retrun ret``` | ```function func(arg) result(ret) ```<br>``` ```<br>``` end function func``` |
+| How to define a function which <br> does NOT have return values. | ```def sub(arg1, arg2, ...): ```<br>```　　return ret``` | ```subroutine sub(arg1, arg2,...)  ```<br>``` ```<br>``` end subroutine sub``` |
 | Does indentation have any meaning? | Yes | No |
 | Are there any statements that must <br> be written in a program? | No | Yes, it is ```implicit none```  |
 | How to call a function with return values? | ```ret = func(arg)``` | ```ret = func(arg)``` |
