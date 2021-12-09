@@ -19,7 +19,7 @@ git clone https://github.com/kazulagi/plantfem.git && cd plantfem && python3 set
 ```
 !git clone https://github.com/kazulagi/plantfem.git 
 %cd plantfem
-!python3 setup.py
+!python3 install.py
 ```
 
 ## (3) Also, docker is available
@@ -35,23 +35,17 @@ Then, let's install plantFEM.
 
 ```shellscript 
 
-plantfem install
+python3 install.py
 
 ```
 
-In case of Google Colab, please add ``!`` before a command. For instance, a command ``plantfem install`` is
-
-```shellscript 
-
-!plantfem install
-
-```
 
 
 
 When you install plantFEM, you'll also get build and execution tools for Fortran since plantFEM is based on the modern Fortran. The plantFEM does lots of things:
 
 
+- search sample script ``plantfem search``
 - create your new project with ``plantfem new``
 - build & run your project with ``plantfem run``
 - update your plantFEM ``plantfem update``
@@ -69,6 +63,8 @@ Further, you can easily use MPI by following steps.
 - write number of cpu-cores in ``etc/cpucore`` or run ``plantfem cpu-core`` before running your script.
 
 ## Examples
+
+Sample codes are available in ```Tutorial``` directory.
 
 ### 3D objects
 
