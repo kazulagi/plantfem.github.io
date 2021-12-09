@@ -29,7 +29,7 @@ Windowsを使用する場合、Windows Subsystem for Linux (WSL2) を使い、Ub
 
 
 ```
-sudo apt install git && git clone https://github.com/kazulagi/plantfem.git && cd plantfem && python3 setup.py && ./plantfem install
+sudo apt install git && git clone https://github.com/kazulagi/plantfem.git && cd plantfem && python3 install.py
 ```
 
 また、Google Colabを使う場合、コードブロックに以下の内容をペーストし、実行してください。
@@ -38,8 +38,7 @@ sudo apt install git && git clone https://github.com/kazulagi/plantfem.git && cd
 ```
 !git clone https://github.com/kazulagi/plantfem.git 
 %cd ./plantfem
-!python3 setup.py
-!./plantfem install
+!python3 install.py
 ```
 
 ### plantFEMのディレクトリ構成・コマンド一覧　(5分)
@@ -57,13 +56,13 @@ plantfem
 ├─Tutorial/
 │  ├─app/
 │  │  
-│  ├─playon_std/
+│  ├─std/
 │  │  
-│  ├─playon_fem/
+│  ├─fem/
 │  │  
-│  ├─playon_sim/
+│  ├─sim/
 │  │  
-│  ├─playon_obj/
+│  ├─obj/
 │  │
 │  └─python/
 │
@@ -79,15 +78,11 @@ plantfemでは ```server.f90```というスクリプトファイルにプログ�
 
 ### サンプルプログラムのロード・実行
 
-```./plantfem new``` >> 新しいプログラムを作成
-
-
-```./plantfem load [プログラム名]``` >> 新しいプログラムを作成
-
-
-
 ```./plantfem search``` >> プログラム例を検索します
 
+```./plantfem new``` >> 新しいプログラムを作成
+
+```./plantfem load [プログラム名]``` >> 新しいプログラムを作成
 
 
 ```./plantfem run``` >> ```server.f90```に書かれたプログラムを実行

@@ -91,7 +91,7 @@ The result of the script is,
 
 ### (2) [TimeClass](https://github.com/kazulagi/plantfem/tree/master/src/TimeClass/TimeClass.f90) is a class for time measurement, which can be used to measure cpu time by creating an instance of type time_.
 
-Ex. [Example1](https://github.com/kazulagi/plantfem/tree/master/Tutorial/playon_std/ex0000_time.f90)
+Ex. [Example1](https://github.com/kazulagi/plantfem/tree/master/Tutorial/std/ex0000_time.f90)
 
 
 ```fortran
