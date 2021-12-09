@@ -66,12 +66,6 @@ Further, you can easily use MPI by following steps.
 
 Sample codes are available in ```Tutorial``` directory.
 
-### 3D objects
-
-(Experimental)
-
-
-[3D objects](3dsample.html)
 
 ### Scripts and coding
 plantFEM consists of 4 components, each of which contains some libraries for numerical simulations. All examples runs when it is copied and pasted into ``server.f90`` and executed by ``plantfem run`` command.
