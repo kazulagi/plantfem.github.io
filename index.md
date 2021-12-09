@@ -63,6 +63,22 @@ Further, you can easily use MPI by following steps.
 - set your hostfile at ``etc/hostfile``
 - write number of cpu-cores in ``etc/cpucore`` or run ``plantfem cpu-core`` before running your script.
 
+## How to run your ```.f90``` script?
+
+Single process (Non-MPI):
+
+```
+plantfem build && ./server.out
+```
+
+With MPI:
+
+```
+plantfem build && mpirun -np $NUM_CORE ./server.out
+```
+
+
+
 ## Examples
 
 Sample codes are available in ```Tutorial``` directory.
