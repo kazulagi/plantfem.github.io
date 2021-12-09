@@ -11,7 +11,7 @@ You can download the [plantFEM](https://github.com/kazulagi/plantfem.git) to per
 
 ```shellscript
 
-git clone https://github.com/kazulagi/plantfem.git && cd plantfem && python3 setup.py
+git clone https://github.com/kazulagi/plantfem.git && cd plantfem && python3 install.py
 
 ```
 
